@@ -21,13 +21,16 @@ const registerNewUser = async (req: Request, res: Response) => {
   const { body } = req;
   try {
     logger.info('Received request to register new user', { body });
-    const newUser = await authService.registerNewUser(body);
+    const { user, token } = await authService.registerNewUser(body);
     logger.info('Successfully registered new user');
-    sendSuccess(res, 'User registered successfully', newUser, StatusCodes.CREATED);
+    sendSuccess(res, 'User registered successfully', { user, token }, StatusCodes.CREATED);
   } catch (error: any) {
     logger.error('Error in auth controller while registering new user:', { error });
-    if (error.code === 409) {
+    if (error.code === 409) { // Duplicate email
       return sendError(res, error.message, StatusCodes.CONFLICT);
+    }
+    if (error.code === 11000 && error.keyPattern?.username) {
+      return sendError(res, 'A user with that username already exists.', StatusCodes.CONFLICT);
     }
     sendError(res, 'Something went wrong');
   }

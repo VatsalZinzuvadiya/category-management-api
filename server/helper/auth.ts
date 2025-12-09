@@ -19,8 +19,10 @@ const registerNewUser = async (data: Partial<IUser>) => {
 
     const newUser = new User(data);
     await newUser.save();
-    logger.info('Successfully created new user');
-    return newUser;
+    logger.info('Successfully created new user, generating token');
+    const payload = { id: newUser.id, username: newUser.username };
+    const token = jwt.sign(payload, config.jwtSecret, { expiresIn: '1h' });
+    return { user: newUser, token };
   } catch (error) {
     logger.error('Error creating new user:', error);
     throw error;

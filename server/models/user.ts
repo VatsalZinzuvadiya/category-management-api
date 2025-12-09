@@ -25,7 +25,6 @@ const userSchema: Schema<IUser> = new mongoose.Schema({
   },
 }, { timestamps: true });
 
-userSchema.index({ email: 1 });
 
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
