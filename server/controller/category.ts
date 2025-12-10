@@ -49,7 +49,7 @@ const deleteCategory = async (req: Request, res: Response) => {
     logger.info(`Received request to delete category with id: ${id}`);
     await categoryService.deleteCategory(id);
     logger.info('Successfully deleted category');
-    sendSuccess(res, 'Category deleted successfully', null, StatusCodes.NO_CONTENT);
+    sendSuccess(res, `Category with id ${id} deleted successfully`, null, StatusCodes.OK);
   } catch (error: any) {
     logger.error('Error in category controller while deleting category:', { error });
     sendError(res, 'Error deleting category');
