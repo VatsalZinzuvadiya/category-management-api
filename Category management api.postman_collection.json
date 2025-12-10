@@ -1,0 +1,675 @@
+{
+	"info": {
+		"_postman_id": "76da9265-fe38-43ca-8267-985c500c526c",
+		"name": "Category management api",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42951395",
+		"_collection_link": "https://martian-satellite-181495.postman.co/workspace/Team-Workspace~341b45b1-8c4f-4b45-8c0d-3553b4911492/collection/42951395-76da9265-fe38-43ca-8267-985c500c526c?action=share&source=collection_link&creator=42951395"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vatsalzinzuvadiya1@gmail.com\",\r\n    \"password\": \"vatsal@123\",\r\n    \"username\": \"vatsalv zinzuvadiya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v0/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v0",
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"vatsalzinzuvadiya1@gmail.com\",\r\n    \"password\": \"vatsal@123\",\r\n    \"username\": \"vatsalv zinzuvadiya\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v0/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v0",
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "483"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e3-Z3nB1HynqlPvajF80WlZsIOWkyU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Dec 2025 21:27:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"username\": \"vatsalv zinzuvadiya\",\n            \"email\": \"vatsalzinzuvadiya1@gmail.com\",\n            \"createdAt\": \"2025-12-09T21:27:29.364Z\",\n            \"updatedAt\": \"2025-12-09T21:27:29.364Z\",\n            \"id\": \"693894419ab15a72e954ba9a\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Mzg5NDQxOWFiMTVhNzJlOTU0YmE5YSIsInVzZXJuYW1lIjoidmF0c2FsdiB6aW56dXZhZGl5YSIsImlhdCI6MTc2NTMxNTY0OSwiZXhwIjoxNzY1MzE5MjQ5fQ.edo-igXHP1c6dJwYFWF2D0Hwx04NmXLYqVhl8h_VWtM\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vatsalzinzuvadiya@gmail.com\",\r\n    \"password\": \"vatsal@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v0/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v0",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"vatsalzinzuvadiya@gmail.com\",\r\n    \"password\": \"vatsal@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v0/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v0",
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "414"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19e-nCOX8Tz5p513c+6yR4XCIX5MsHw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Dec 2025 20:13:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"username\": \"vatsal zinzuvadiya\",\n        \"email\": \"vatsalzinzuvadiya@gmail.com\",\n        \"createdAt\": \"2025-12-09T19:04:44.099Z\",\n        \"updatedAt\": \"2025-12-09T19:04:44.099Z\",\n        \"id\": \"693872cce370926da5451eea\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Mzg3MmNjZTM3MDkyNmRhNTQ1MWVlYSIsInVzZXJuYW1lIjoidmF0c2FsIHppbnp1dmFkaXlhIiwiaWF0IjoxNzY1MzExMjAyLCJleHAiOjE3NjUzMTQ4MDJ9.4NmSfy-ejR0v3bOwnik4cr_O-BntusDbAfKGR0fyHLA\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Printed\",\r\n  \"parent\": \"69387d89cc53a4a639baf2fb\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v0/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v0",
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Printed\",\r\n  \"parent\": \"69387d89cc53a4a639baf2fb\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v0/api/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v0",
+										"api",
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-Jl/5NKn4SfJZciQelzQpMSANP9w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Dec 2025 20:16:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"name\": \"Printed\",\n        \"parent\": \"69387d89cc53a4a639baf2fb\",\n        \"status\": \"active\",\n        \"createdAt\": \"2025-12-09T20:16:35.041Z\",\n        \"updatedAt\": \"2025-12-09T20:16:35.041Z\",\n        \"id\": \"693883a38ef813b5b34a50ac\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Electronics\",\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v0/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v0",
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Electronics\",\r\n  \"status\": \"active\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v0/api/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v0",
+										"api",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1569"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"621-RidrEXn0BdExCqw4Til+9N5RWqE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Dec 2025 20:25:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Categories fetched successfully\",\n    \"data\": [\n        {\n            \"name\": \"Mobile Phones\",\n            \"parent\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-09T19:30:51.915Z\",\n            \"updatedAt\": \"2025-12-09T20:11:13.943Z\",\n            \"id\": \"693878ebcc53a4a639baf2e2\",\n            \"children\": []\n        },\n        {\n            \"name\": \"Seasonal Offers\",\n            \"parent\": null,\n            \"status\": \"inactive\",\n            \"createdAt\": \"2025-12-09T19:31:06.679Z\",\n            \"updatedAt\": \"2025-12-09T19:31:06.679Z\",\n            \"id\": \"693878facc53a4a639baf2e4\",\n            \"children\": []\n        },\n        {\n            \"name\": \"Furniture\",\n            \"parent\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-09T19:31:16.902Z\",\n            \"updatedAt\": \"2025-12-09T19:31:16.902Z\",\n            \"id\": \"69387904cc53a4a639baf2e6\",\n            \"children\": []\n        },\n        {\n            \"name\": \"Fashion\",\n            \"parent\": null,\n            \"status\": \"active\",\n            \"createdAt\": \"2025-12-09T19:49:52.728Z\",\n            \"updatedAt\": \"2025-12-09T19:49:52.728Z\",\n            \"id\": \"69387d60cc53a4a639baf2f7\",\n            \"children\": [\n                {\n                    \"name\": \"Men\",\n                    \"parent\": \"69387d60cc53a4a639baf2f7\",\n                    \"status\": \"active\",\n                    \"createdAt\": \"2025-12-09T19:50:15.743Z\",\n                    \"updatedAt\": \"2025-12-09T19:50:15.743Z\",\n                    \"id\": \"69387d77cc53a4a639baf2f9\",\n                    \"children\": [\n                        {\n                            \"name\": \"T-Shirts\",\n                            \"parent\": \"69387d77cc53a4a639baf2f9\",\n                            \"status\": \"active\",\n                            \"createdAt\": \"2025-12-09T19:50:33.753Z\",\n                            \"updatedAt\": \"2025-12-09T19:50:33.753Z\",\n                            \"id\": \"69387d89cc53a4a639baf2fb\",\n                            \"children\": [\n                                {\n                                    \"name\": \"Printed\",\n                                    \"parent\": \"69387d89cc53a4a639baf2fb\",\n                                    \"status\": \"active\",\n                                    \"createdAt\": \"2025-12-09T19:50:52.922Z\",\n                                    \"updatedAt\": \"2025-12-09T19:50:52.922Z\",\n                                    \"id\": \"69387d9ccc53a4a639baf2fd\",\n                                    \"children\": []\n                                },\n                                {\n                                    \"name\": \"Printed\",\n                                    \"parent\": \"69387d89cc53a4a639baf2fb\",\n                                    \"status\": \"active\",\n                                    \"createdAt\": \"2025-12-09T20:16:35.041Z\",\n                                    \"updatedAt\": \"2025-12-09T20:16:35.041Z\",\n                                    \"id\": \"693883a38ef813b5b34a50ac\",\n                                    \"children\": []\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update category by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v0/api/category/693878ebcc53a4a639baf2e2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v0",
+								"api",
+								"category",
+								"693878ebcc53a4a639baf2e2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Category",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\": \"active\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v0/api/category/693878ebcc53a4a639baf2e2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v0",
+										"api",
+										"category",
+										"693878ebcc53a4a639baf2e2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-1njrifreJnjmub4AWAH+5hhIT2s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Dec 2025 20:11:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Mobile Phones\",\n    \"parent\": null,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-12-09T19:30:51.915Z\",\n    \"updatedAt\": \"2025-12-09T20:11:13.943Z\",\n    \"id\": \"693878ebcc53a4a639baf2e2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete category by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v0/api/category/693878a6cc53a4a639baf2df",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v0",
+								"api",
+								"category",
+								"693878a6cc53a4a639baf2df"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://template.postman-echo.com"
+		}
+	]
+}
