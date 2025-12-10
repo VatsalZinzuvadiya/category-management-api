@@ -173,22 +173,3 @@ npm run serve
   }
 ]
 
-## Running with Docker
-
-To build and run the application with Docker, follow these steps:
-
-1.  **Build the Docker image:**
-
-    ```bash
-    docker build -t category-management-api .
-    ```
-
-2.  **Run the Docker container:**
-
-    Make sure to replace `your-mongodb-connection-string` and `your-jwt-secret` with your actual credentials.
-
-    ```bash
-    docker run -p 3000:3000 -e PORT=3000 -e MONGO_URI=your-mongodb-connection-string -e JWT_SECRET=your-jwt-secret category-management-api
-    ```
-
-    The application will be accessible at `http://localhost:3000`.
